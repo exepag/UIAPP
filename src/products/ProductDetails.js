@@ -2,7 +2,7 @@ import React, {Component} from 'react'
 import {View, Text, Image } from 'react-native'
 import axios from 'axios'
 import {BASE_API_URL} from '../global/util'
-    
+import numeral from 'numeral';    
 
 class ProductDetails extends Component {
 
@@ -43,7 +43,7 @@ class ProductDetails extends Component {
                 <Image source={{ uri:this.state.image }} 
 		        style={{width:'100%', height:300, resizeMode:'contain'}} />
                 <Text style={{textAlign:'center', fontSize:20, fontWeight:'bold', marginTop:10}}>{this.state.product_name}</Text>
-                <Text style={{textAlign:'center', color:'red', fontSize:20, fontWeight:'bold'}}>Rp. {(this.state.price).toLocaleString('id')}</Text>
+                <Text style={{textAlign:'center', color:'red', fontSize:20, fontWeight:'bold'}}>Rp. {numeral(this.state.price).format('0,0.00')}</Text>
             </View>
         )
     }    

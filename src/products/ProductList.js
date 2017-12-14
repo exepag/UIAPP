@@ -1,6 +1,6 @@
 import React, {Component} from 'react'
 import {View, Text, Image, TouchableOpacity } from 'react-native'
-
+import numeral from 'numeral';
 
 //Function based component
 const ProductList = (data) => {
@@ -21,7 +21,7 @@ const ProductList = (data) => {
                         <View style={{marginLeft:15}}>
                             <Text style={{fontSize:20, marginTop:20}}>{dataHasil.product_name}</Text>
                             <View style={{flexDirection:'row'}}>
-                                <Text style={{fontSize:15}}>Rp.{(dataHasil.price).toLocaleString('id')}</Text>
+                                <Text style={{fontSize:15}}>Rp.{ numeral(dataHasil.price).format('0,0.00')}</Text>
                                 {
                                     dataHasil.price >= 15000000 ? (
                                         <Text style={{color:'red', marginLeft:25}}>15% Off</Text>

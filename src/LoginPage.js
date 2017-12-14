@@ -124,7 +124,7 @@ class LoginPage extends Component {
                             </TouchableOpacity>
                             
                             <TouchableOpacity style={{marginLeft:25, backgroundColor:'grey', width:'40%', borderRadius:3}}
-                            >
+                            onPress = { () => this.props.navigation.goBack() } >
                                 <Text style={{textAlign:'center', fontSize:20, fontWeight:'500', color:'white', margin:10}}>
                                     Cancel
                                 </Text>
